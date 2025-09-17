@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './floatingButton.css';
+import './floatingbutton.css';
 import { State, City } from 'country-state-city';
 
 const FloatingButton = () => {

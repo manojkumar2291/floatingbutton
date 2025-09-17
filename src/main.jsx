@@ -18,7 +18,7 @@ function mountFloatingButton() {
   );
 }
 
-// Automatically mount when script is loaded
+// Auto-mount when script loads
 mountFloatingButton();
 
 // Optional: expose for manual control

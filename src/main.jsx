@@ -3,13 +3,23 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-// Dynamically create a mount point
-const mountPoint = document.createElement('div');
-document.body.appendChild(mountPoint);
+function mountFloatingButton() {
+  let mountPoint = document.getElementById('floating-button-root');
+  if (!mountPoint) {
+    mountPoint = document.createElement('div');
+    mountPoint.id = 'floating-button-root';
+    document.body.appendChild(mountPoint);
+  }
 
-// Render your widget into it
-ReactDOM.createRoot(mountPoint).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  ReactDOM.createRoot(mountPoint).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+
+// Automatically mount when script is loaded
+mountFloatingButton();
+
+// Optional: expose for manual control
+window.FloatingButton = { mount: mountFloatingButton };
